@@ -128,6 +128,27 @@ public class SafeInput {
     }
 
     public static void prettyHeader(String msg) {
-        
+        int width = 60;
+        int msgLength = msg.length();
+        int totalPad = width - 6 - msgLength;
+        int leftPad = totalPad / 2;
+        int rightPad = totalPad - leftPad;
+        for(int i = 0; i < width; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
+        System.out.print("***");
+        for(int i = 0; i < leftPad; i++) {
+            System.out.print(" ");
+        }
+        System.out.print(msg);
+        for(int i = 0; i < rightPad; i++) {
+            System.out.print(" ");
+        }
+        System.out.println("***");
+        for(int i = 0; i < width; i++) {
+            System.out.print("*");
+        }
+        System.out.println();
     }
 }
